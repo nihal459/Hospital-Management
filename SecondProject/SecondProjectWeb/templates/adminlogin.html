@@ -1,0 +1,53 @@
+<html>
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>A1 Hospital Admin Login</title>
+</head>
+<body style="background-image:url({% static 'img/office.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div class="home">
+<a href="home" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX;">HOME</a>
+</div>
+
+<h1 style="font-family:verdana; font-color:green; margin-top:170; margin-left:130;">Admin Login</h1>
+<div class="login">
+<form name="adminloginfrm" id="adminloginfrm" method="get" action="adminloginhandler">
+<table style="margin-left:130;">
+<tr><td>Username</td>
+<td><input type="text" name="username" id="username" placeholder="User ID" required></td></tr>
+<tr><td>Password</td>
+<td><input type="password" name="pass" id="pass" required></td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr><td><input type="reset" name="reset" value="Reset" style="background-color:white">
+<input type="submit" name="submit" value="Login" style="background-color:rgba(000,200,000,0.5)"></tr></td>
+</table>
+<br>
+<div style="font-size:20px; font-family:courier; color:red; margin-left:130;">
+{{message}}
+</div>
+</form>
+</div>
+
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

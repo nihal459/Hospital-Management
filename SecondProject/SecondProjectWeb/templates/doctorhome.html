@@ -1,0 +1,44 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A1 Hospital Doctor Home</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">Doctor Home</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div style="margin-top:140;"> 
+<a href="userhome" style="color:red; font-family:verdana; font-size:20PX; text-decoration:none;">HOME</a>
+<a href="profile" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">PROFILE</a>
+<a href="viewpatients" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW PATIENTS</a>
+<a href="viewappointments" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW APPOINTMENTS</a>
+</div>
+
+<div class="menu">
+{{dname}}
+<a href="doctorlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX; text-decoration:none;">LOGOUT</a>
+</div>
+</div>
+
+
+
+<br>
+
+<div style="margin-top:1; margin-left:550; position:fixed;">
+<h2>Welcome Dr.{{dname}} </h2>
+</div> 
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

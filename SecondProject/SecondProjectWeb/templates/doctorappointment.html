@@ -1,0 +1,75 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A2 Hospital Doctor Appointment</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">Doctor Appointment</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div style="margin-top:140;"> 
+<a href="patienthome" style="color:red; font-family:verdana; font-size:20PX; text-decoration:none;">HOME</a>
+<a href="patientprofile" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">PROFILE</a>
+<a href="patientsdoctors" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW DOCTORS</a>
+</div>
+
+<div class="menu">
+{{dname}}
+<a href="doctorlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX; text-decoration:none;">LOGOUT</a>
+</div>
+</div>
+
+<div style="margin-top:70; margin-left:50;">
+<form name="doctorappointmentfrm" id="doctorappointmentfrm" method="post" action="doctorappointmentconfirmation">
+{% csrf_token %}
+<table width="50%">
+<tr><td>Doctor ID</td><td>{{drows.0}} <input type="hidden" name="doctorid" value="{{drows.0}}"></td></tr>
+<tr><td>Name</td><td>{{drows.1}}<input type="hidden" name="doctorname" value="{{drows.1}}"></td></tr>
+<tr><td>Gender</td><td>{{drows.2}}</td></tr>
+<tr><td>Date Of Birth</td><td>{{drows.3}}</td></tr>
+<tr><td>Specialisation</td><td>{{drows.4}}</td></tr>
+<tr><td>District</td><td>{{drows.5}}</td></tr>
+<tr><td>Email Address</td><td>{{drows.6}}</td></tr>
+<tr><td>Phone Number</td><td>{{drows.7}}</td></tr>
+<tr><td>Username</td><td>{{drows.8}}</td></tr>
+<tr><td>Time Slot</td><td><select name="atime" id="atime" required><option value="">Select time</option>
+<option value="9am - 10am">9am - 10am</option>
+<option value="10am - 11am">11am - 12pm</option>
+<option value="1pm - 2pm">1pm - 2pm</option>
+</td></tr>
+<tr><td>Date</td><td><input type="date" name="adate" required></td></tr>
+<tr><td>Token</td><td><select name="token" id="token" required><option value="">Select token</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</td></tr>
+<tr><td><input type="reset" name="reset" value="Reset"></td>
+<td><input type="submit" name="submit" value="Book Appointment"></td></tr>
+</table>
+</form>
+</div>
+
+
+<br>
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

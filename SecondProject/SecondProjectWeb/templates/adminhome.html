@@ -1,0 +1,39 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A1 Hospital Admin</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">Administrator</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+
+<div class="menu">
+<a href="adminlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX;">LOGOUT</a>
+</div>
+</div>
+
+<div style="margin-top:140;"> 
+<a href="adminhome" style="color:red; font-family:verdana; font-size:20PX;">HOME</a>
+<a href="doctors" style="color:red; font-family:verdana; font-size:20PX; margin-left:20;">VIEW DOCTORS</a>
+<a href="patients" style="color:red; font-family:verdana; font-size:20PX; margin-left:20;">VIEW PATIENTS</a>
+</div>
+
+<h2 style="text-align:center;">Welcome, Admin</h2>
+
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>A1 Hospital Patient Registeration</title>
+</head>
+<body style="background-image:url({% static 'img/jjj.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div class="home">
+<a href="home" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX;">HOME</a>
+</div>
+
+<h1 style="font-family:verdana; margin-left:50; margin-top:150;">Patient Registration</h1>
+
+
+<div class="registration">
+<form name="patientregisterfrm" id="patientregisterfrm" method="post" action="patientregisterhandler">
+{% csrf_token %}
+<table style="margin-left:50;">
+<tr><td>Name<span style="color:red">*</span></td>
+<td><input type="text" name="name" id="name" required></td></tr>
+
+<tr><td>Age<span style="color:red">*</span></td>
+<td><input type="text" name="age" id="age" required></td></tr>
+</td></tr>
+
+<tr><td>Gender<span style="color:red">*</span></td>
+<td>M<input type="radio" name="gender" value="Male" required>&nbsp;
+&nbsp;
+F<input type="radio" name="gender" value="Female"></td></tr>
+
+<tr><td>Disease<span style="color:red">*</span></td>
+<td><input type="text" name="disease" id="disease" required></td></tr>
+</td></tr>
+
+<tr><td>District<span style="color:red">*</span></td>
+<td><select name="district" id="district" required><option value="">Select District</option>
+<option value="Palakkad">Palakkad</option>
+<option value="Thrissur">Thrissur</option>
+<option value="Ernakulam">Ernakulam</option>
+<option value="Malappuram">Malappuram</option>
+<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+</td></tr>
+
+<tr><td>Email<span style="color:red">*</span></td>
+<td><input type="email" name="email" id="email" required></td></tr>
+
+<tr><td>Phone Number<span style="color:red">*</span></td>
+<td><input type="text" name="phone" id="phone" pattern=[0-9]{10} required></td></tr>
+
+<tr><td>Username<span style="color:red">*</span></td>
+<td><input type="text" name="username" id="username" placeholder="User ID/Phone number" required></td></tr>
+<tr></tr>
+<tr></tr>
+<tr><td>Create Password<span style="color:red">*</span></td>
+<td><input type="password" name="password" id="password" required></td></tr>
+<tr></tr>
+<tr></tr>
+<tr><td><input type="reset" name="reset" value="Reset"></td>
+<td><input type="submit" name="submit value="Submit"></td></tr>
+</table>
+</form>
+</div>
+
+
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

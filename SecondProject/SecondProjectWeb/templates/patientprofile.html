@@ -1,0 +1,71 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A1 Hospital Patient Profile</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">Patient Profile</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div class="menu">
+{{pname}}
+<a href="patientlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX; text-decoration:none;">LOGOUT</a>
+</div>
+</div>
+
+<div class="header2" style="margin-top:140;">
+<a href="patienthome" style="color:red; font-family:verdana; font-size:20PX; text-decoration:none;">HOME</a>
+<a href="patientprofile" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">PROFILE</a>
+<a href="patientsdoctors" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW DOCTORS</a>
+<a href="trackappointment" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">TRACK APPOINTMENT</a>
+
+</div>
+
+<div style="margin-top:50; margin-left:50;">
+<form name="patientprofileupdatefrm" id="patientprofileupdatefrm" method="post" action="patientprofileupdatehandler">
+{% csrf_token %}
+<table width="50%">
+<tr><td>Patient ID</td><td>{{drows.0}}</td></tr>
+<tr><td>Name</td><td>{{drows.1}}</td></tr>
+<tr><td>Age</td><td>{{drows.2}}</td></tr>
+<tr><td>Disease</td><td>{{drows.3}}</td></tr>
+<tr><td>District</td><td>{{drows.4}}</td></tr>
+<tr><td>Phone</td><td><input type="text" name="phone" id="phone" value="{{drows.5}}"></td></tr>
+<tr><td>Username</td><td>{{drows.6}}</td></tr>
+<tr><td>Password</td><td><input type="text" name="pass" id="pass" value="{{drows.7}}"></td></tr>
+<tr><td>Gender</td><td>{{drows.8}}</td></tr>
+<tr><td>Email</td><td><input type="email" name="email" id="email" value="{{drows.9}}"></td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr><td><input type="reset" name="reset" value="Reset"></td>
+<td><input type="submit" name="submit" value="Update"></td></tr>
+</table>
+</form>
+</div>
+
+
+
+
+
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

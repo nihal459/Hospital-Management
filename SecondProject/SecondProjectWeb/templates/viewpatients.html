@@ -1,0 +1,63 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A1 Hospital Patients</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">View All Appointments</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+<div class="menu">
+{{dname}}
+<a href="doctorlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX; text-decoration:none;">LOGOUT</a>
+</div>
+</div>
+
+<div style="margin-top:140;"> 
+<a href="doctorhome" style="color:red; font-family:verdana; font-size:20PX; text-decoration:none;">HOME</a>
+<a href="profile" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">PROFILE</a>
+<a href="viewpatients" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW PATIENTS</a>
+<a href="viewappointments" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW APPOINTMENTS</a>
+</div>
+
+<h2 style="text-align:left; font-family:verdana; margin-top:50;"><u>List Of Patients</u></h2>
+
+<div style="margin-top:40;">
+<table width="75%" border="1">
+ <tr>
+ <td>Id</td>
+ <td><a href="sortname">Name</a></td>
+ <td><a href="sortage">Age</a></td>
+ <td><a href="sortdisease">Disease</a></td>
+ <td><a href="sortdistrict">District</a></td>
+ </tr>
+ 
+ {% for x in drows %}
+   <tr>    
+   <td>{{x.0}}</td>	
+   <td>{{x.1}}</td>	
+   <td>{{x.2}}</td>	
+   <td>{{x.3}}</td>	
+   <td>{{x.4}}</td>   
+   </tr>	
+	
+ {% endfor %}
+
+</table>
+
+</div>
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

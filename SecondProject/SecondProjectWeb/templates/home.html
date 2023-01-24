@@ -1,0 +1,37 @@
+<html>
+{% load staticfiles %}
+<head>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<title>A1 Hospital</title>
+</head>
+<body style="background-image:url({% static 'img/home3.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<div class="icon">
+		<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+	</div>
+</div>
+
+<div class="menu">
+	<div style="margin-top:12px;">
+		<a href="doctorlogin" style="color:red; font-size:14px; text-decoration:none;"><b>DOCTOR LOGIN</b></a>
+		<a href="patientlogin" style="margin-left:20; color:red; font-size:14px; text-decoration:none;"><b>PATIENT LOGIN<b></a>
+		<a href="adminlogin" style="margin-left:20; color:green; font-size:14px; text-decoration:none;"><b>ADMIN LOGIN<b></a>
+	</div>
+</div>
+
+
+
+<h1 style="margin-left:800; font-family:verdana; margin-top:230;">Not Registered Yet ?</h1>
+<a href="registration" style="color:red; margin-left:855; font-family:verdana; margin-top:100; font-size:22PX; text-decoration:none;"><b>Doctor Registration</b></a>
+<br>
+<br>
+<a href="patientregistration" style="color:red; margin-left:855; font-family:verdana; margin-top:100; font-size:22PX; text-decoration:none;"><b>Patient Registration</b></a>
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>

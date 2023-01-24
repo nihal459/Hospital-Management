@@ -1,0 +1,67 @@
+<html>
+{% load staticfiles %}
+<head>
+<title>A1 Hospital Doctor Home</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body style="background-image:url({% static 'img/home.jpg' %}); background-size:100%;">
+
+<div class="header">
+	<h1 style="color:red; text-align:center; font-family:verdana;">A1 HOSPITAL</h1>
+	<h2 style="color:black; text-align:center; font-family:verdana;">Doctor Profile</h2>
+</div>
+<div class="icon">
+	<a href="home"><img src="{% static 'img/icon1.png' %}" height="40px"></a>
+</div>
+
+
+<div class="menu">
+{{dname}}
+<a href="doctorlogin" style="color:red; font-family:verdana; margin-top:-60; font-size:22PX; text-decoration:none;">LOGOUT</a>
+</div>
+</div>
+
+
+<div class="header2" style="margin-top:140;">
+<a href="doctorhome" style="color:red; font-family:verdana; font-size:20PX; text-decoration:none;">HOME</a>
+<a href="profile" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">PROFILE</a>
+<a href="viewpatients" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW PATIENTS</a>
+<a href="#" style="color:red; font-family:verdana; font-size:20PX; margin-left:20; text-decoration:none;">VIEW APPOINTMENTS</a>
+</div>
+
+<div style="margin-top:70; margin-left:50;">
+<form name="profileupdatefrm" id="profileupdatefrm" method="post" action="profileupdatehandler">
+{% csrf_token %}
+<table width="50%">
+<tr><td>Doctor ID</td><td>{{drows.0}}</td></tr>
+<tr><td>Name</td><td>{{drows.1}}</td></tr>
+<tr><td>Gender</td><td>{{drows.2}}</td></tr>
+<tr><td>Date Of Birth</td><td>{{drows.3}}</td></tr>
+<tr><td>Specialisation</td><td>{{drows.4}}</td></tr>
+<tr><td>District</td><td>{{drows.5}}</td></tr>
+<tr><td>Email Address</td><td><input type="email" name="email" id="email" value="{{drows.6}}"></td></tr>
+<tr><td>Phone Number</td><td><input type="text" name="phone" id="phone" value="{{drows.7}}"></td></tr>
+<tr><td>Username</td><td>{{drows.8}}</td></tr>
+<tr><td>Password</td><td><input type="text" name="pass" id="pass" value="{{drows.9}}"></td></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr><td><input type="reset" name="reset" value="Reset"></td>
+<td><input type="submit" name="submit" value="Update"></td></tr>
+</table>
+</form>
+</div>
+
+
+<div class="footer">
+  <p>Copyright &copy; 2022 A1 HOSPITAL</p>
+</div>
+
+</body>
+</html>
